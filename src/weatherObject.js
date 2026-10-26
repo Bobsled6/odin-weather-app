@@ -1,6 +1,8 @@
-export const weatherObject =  {
-  conditions:"",
-  temp:"",
-  feelslike:"",
-  humidity:"",
-}
+export const weatherObject = {
+  conditions: "",
+  temp: "",
+  feelslike: "",
+  humidity: "",
+  precipChance: "",
+  windspeed: "",
+};
