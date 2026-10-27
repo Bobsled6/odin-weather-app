@@ -13,5 +13,5 @@ export default async function getWeatherData(location) {
       genHTML(location);
       console.log(weatherObject);
     })
-    .catch((error) => console.error(error));
+    .catch((error) => console.error(error) && alert("Please enter a valid location"));
 }

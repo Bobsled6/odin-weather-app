@@ -5,7 +5,8 @@ import locationForm from "./locationForm.js";
 
 function genHeader(location) {
   const header = document.createElement("h1");
-  header.innerHTML = location;
+  let headerCap = location.toLowerCase().split(` `).map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(' ')
+  header.innerHTML = headerCap;
   header.id = "header";
   contentDiv.appendChild(header);
 }
