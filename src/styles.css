@@ -15,13 +15,43 @@ body {
 
 #header {
     align-self: center;
+    font-size: 5rem;
 }
 
 #tempConditionsDiv {
     color: black;
 }
 
+#tempDiv {
+    font-size: 3rem;
+}
+
+#conditionsDiv {
+    font-size: 1.5rem;
+}
+
+.parentDiv {
+    font-size: 1.25rem;
+}
+
 #locationForm {
     grid-area: 8 / 1 / 8 / 1;
     padding-bottom: 6rem;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
 }
+
+#locationInput {
+    width: 75%;
+    align-self: center;
+}
+
+#locationButton {
+    width: 25%;
+    align-self: center;
+}
+
+
