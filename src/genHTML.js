@@ -4,11 +4,7 @@ import locationForm from "./locationForm.js";
 
 function genHeader(location) {
   const header = document.createElement("h1");
-  let headerCap = location
-    .toLowerCase()
-    .split(` `)
-    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(" ");
+  let headerCap = allWordsCap(location);
   header.innerHTML = headerCap;
   header.id = "header";
   contentDiv.appendChild(header);
@@ -25,16 +21,16 @@ function genConditions() {
 
   conditionsDiv.id = "conditionsDiv";
   tempDiv.id = "tempDiv";
+  tempConditionsDiv.id = "tempConditionsDiv";
   feelsLikeDiv.id = "feelsLikeDiv";
   humidityDiv.id = "humidityDiv";
   precipChanceDiv.id = "precipChanceDiv";
   windspeedDiv.id = "windspeedDiv";
 
-  conditionsDiv.innerHTML = weatherObject.conditions;
+  conditionsDiv.innerHTML = allWordsCap(weatherObject.conditions);
   tempDiv.innerHTML = weatherObject.temp;
   tempConditionsDiv.appendChild(tempDiv);
   tempConditionsDiv.appendChild(conditionsDiv);
-
 
   weatherDiv("Feels Like", weatherObject.feelslike, feelsLikeDiv);
   weatherDiv("Humidity", weatherObject.humidity, humidityDiv);
@@ -65,6 +61,15 @@ function genConditions() {
     parentDiv.appendChild(labelDiv);
     parentDiv.appendChild(valueDiv);
   }
+}
+
+function allWordsCap(string) {
+  let newString = string
+    .toLowerCase()
+    .split(` `)
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(" ");
+  return newString;
 }
 
 export default function genHTML(location) {

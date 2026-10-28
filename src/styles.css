@@ -12,3 +12,16 @@ body {
   text-align: center;
   grid-template-rows: 3fr 2fr repeat(5, 1fr);
 }
+
+#header {
+    align-self: center;
+}
+
+#tempConditionsDiv {
+    color: black;
+}
+
+#locationForm {
+    grid-area: 8 / 1 / 8 / 1;
+    padding-bottom: 6rem;
+}

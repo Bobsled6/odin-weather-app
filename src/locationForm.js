@@ -17,14 +17,14 @@ export default function locationForm() {
 
   locationInput.setAttribute("type", "text");
 
-  locationButton.setAttribute("type","submit");
+  locationButton.setAttribute("type", "submit");
   locationButton.setAttribute("value", "Search");
 
   locationButton.addEventListener("click", () => {
     event.preventDefault();
     let location = locationInput.value;
     getWeatherData(location);
-  })
+  });
 
   locationForm.appendChild(locationLabel);
   locationForm.appendChild(locationInput);
