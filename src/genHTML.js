@@ -2,10 +2,13 @@ const contentDiv = document.getElementById("content");
 import { weatherObject } from "./weatherObject.js";
 import locationForm from "./locationForm.js";
 
-
 function genHeader(location) {
   const header = document.createElement("h1");
-  let headerCap = location.toLowerCase().split(` `).map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(' ')
+  let headerCap = location
+    .toLowerCase()
+    .split(` `)
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(" ");
   header.innerHTML = headerCap;
   header.id = "header";
   contentDiv.appendChild(header);
@@ -14,6 +17,7 @@ function genHeader(location) {
 function genConditions() {
   const conditionsDiv = document.createElement("div");
   const tempDiv = document.createElement("div");
+  const tempConditionsDiv = document.createElement("div");
   const feelsLikeDiv = document.createElement("div");
   const humidityDiv = document.createElement("div");
   const precipChanceDiv = document.createElement("div");
@@ -28,6 +32,9 @@ function genConditions() {
 
   conditionsDiv.innerHTML = weatherObject.conditions;
   tempDiv.innerHTML = weatherObject.temp;
+  tempConditionsDiv.appendChild(tempDiv);
+  tempConditionsDiv.appendChild(conditionsDiv);
+
 
   weatherDiv("Feels Like", weatherObject.feelslike, feelsLikeDiv);
   weatherDiv("Humidity", weatherObject.humidity, humidityDiv);
@@ -38,8 +45,7 @@ function genConditions() {
   );
   weatherDiv("Wind Speed", weatherObject.windspeed, windspeedDiv);
 
-  contentDiv.appendChild(conditionsDiv);
-  contentDiv.appendChild(tempDiv);
+  contentDiv.appendChild(tempConditionsDiv);
   contentDiv.appendChild(feelsLikeDiv);
   contentDiv.appendChild(humidityDiv);
   contentDiv.appendChild(precipChanceDiv);
