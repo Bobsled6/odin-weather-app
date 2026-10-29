@@ -19,11 +19,13 @@ body {
 }
 
 #tempConditionsDiv {
-    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
 }
 
 #tempDiv {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 #conditionsDiv {

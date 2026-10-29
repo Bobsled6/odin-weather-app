@@ -28,18 +28,19 @@ function genConditions() {
   windspeedDiv.id = "windspeedDiv";
 
   conditionsDiv.innerHTML = allWordsCap(weatherObject.conditions);
-  tempDiv.innerHTML = weatherObject.temp;
+  tempDiv.innerHTML = weatherObject.temp + "°F";
   tempConditionsDiv.appendChild(tempDiv);
   tempConditionsDiv.appendChild(conditionsDiv);
 
-  weatherDiv("Feels Like", weatherObject.feelslike, feelsLikeDiv);
-  weatherDiv("Humidity", weatherObject.humidity, humidityDiv);
+  weatherDiv("Feels Like", weatherObject.feelslike, feelsLikeDiv, "°F");
+  weatherDiv("Humidity", weatherObject.humidity, humidityDiv, "%");
   weatherDiv(
     "Precipitation Chance",
     weatherObject.precipChance,
     precipChanceDiv,
+    "%"
   );
-  weatherDiv("Wind Speed", weatherObject.windspeed, windspeedDiv);
+  weatherDiv("Wind Speed", weatherObject.windspeed, windspeedDiv," mph");
 
   contentDiv.appendChild(tempConditionsDiv);
   contentDiv.appendChild(feelsLikeDiv);
@@ -47,7 +48,7 @@ function genConditions() {
   contentDiv.appendChild(precipChanceDiv);
   contentDiv.appendChild(windspeedDiv);
 
-  function weatherDiv(label, value, parentDiv) {
+  function weatherDiv(label, value, parentDiv, unit) {
     const labelDiv = document.createElement("div");
     const valueDiv = document.createElement("div");
 
@@ -56,7 +57,7 @@ function genConditions() {
     parentDiv.classList.add("parentDiv");
 
     labelDiv.innerHTML = label;
-    valueDiv.innerHTML = value;
+    valueDiv.innerHTML = value + unit;
 
     parentDiv.appendChild(labelDiv);
     parentDiv.appendChild(valueDiv);
