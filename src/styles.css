@@ -4,7 +4,7 @@ body {
   height: 100vh;
   width: 100vw;
 }
-#content {
+#weatherContainer {
   height: 100%;
   width: 100%;
   display: grid;
@@ -55,5 +55,49 @@ body {
     width: 25%;
     align-self: center;
 }
+
+#unitToggleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#unitToggleLabel {
+    background: #ccc;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+#unitToggleLabel::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#unitToggleCheckbox {
+    display: none;
+}
+
+#unitToggleCheckbox:checked + #unitToggleLabel {
+    background: blue;
+}
+
+#unitToggleCheckbox:checked + #unitToggleLabel::before {
+    left: 32px;
+}
+
+
+
+
+
 
 

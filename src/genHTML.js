@@ -1,13 +1,14 @@
-const contentDiv = document.getElementById("content");
+const weatherContainer = document.getElementById("weatherContainer");
 import { weatherObject } from "./weatherObject.js";
 import locationForm from "./locationForm.js";
+
 
 function genHeader(location) {
   const header = document.createElement("h1");
   let headerCap = allWordsCap(location);
   header.innerHTML = headerCap;
   header.id = "header";
-  contentDiv.appendChild(header);
+  weatherContainer.appendChild(header);
 }
 
 function genConditions() {
@@ -42,11 +43,11 @@ function genConditions() {
   );
   weatherDiv("Wind Speed", weatherObject.windspeed, windspeedDiv," mph");
 
-  contentDiv.appendChild(tempConditionsDiv);
-  contentDiv.appendChild(feelsLikeDiv);
-  contentDiv.appendChild(humidityDiv);
-  contentDiv.appendChild(precipChanceDiv);
-  contentDiv.appendChild(windspeedDiv);
+  weatherContainer.appendChild(tempConditionsDiv);
+  weatherContainer.appendChild(feelsLikeDiv);
+  weatherContainer.appendChild(humidityDiv);
+  weatherContainer.appendChild(precipChanceDiv);
+  weatherContainer.appendChild(windspeedDiv);
 
   function weatherDiv(label, value, parentDiv, unit) {
     const labelDiv = document.createElement("div");
@@ -74,7 +75,7 @@ function allWordsCap(string) {
 }
 
 export default function genHTML(location) {
-  contentDiv.innerHTML = "";
+  weatherContainer.innerHTML = "";
   locationForm();
   genHeader(location);
   genConditions();
