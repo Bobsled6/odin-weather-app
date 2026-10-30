@@ -4,7 +4,6 @@ import genHTML from "./genHTML.js";
 import { unitObject } from "./unitObject.js";
 
 export default async function getWeatherData(location) {
-  console.log(unitObject.units)
   fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unitObject.units}&key=7M6JA55NJLAAWDWUXP789RLVX`,
   )

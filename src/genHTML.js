@@ -3,7 +3,6 @@ import { weatherObject } from "./weatherObject.js";
 import locationForm from "./locationForm.js";
 import { unitObject } from "./unitObject.js";
 
-
 function genHeader(location) {
   const header = document.createElement("h1");
   let headerCap = allWordsCap(location);
@@ -37,16 +36,25 @@ function genConditions() {
   tempConditionsDiv.appendChild(tempDiv);
   tempConditionsDiv.appendChild(conditionsDiv);
 
-  
-  weatherDiv("Feels Like", weatherObject.feelslike, feelsLikeDiv, unitObject[`${toggleStatus}Temp`] );
+  weatherDiv(
+    "Feels Like",
+    weatherObject.feelslike,
+    feelsLikeDiv,
+    unitObject[`${toggleStatus}Temp`],
+  );
   weatherDiv("Humidity", weatherObject.humidity, humidityDiv, "%");
   weatherDiv(
     "Precipitation Chance",
     weatherObject.precipChance,
     precipChanceDiv,
-    "%"
+    "%",
   );
-  weatherDiv("Wind Speed", weatherObject.windspeed, windspeedDiv,unitObject[`${toggleStatus}Wind`]);
+  weatherDiv(
+    "Wind Speed",
+    weatherObject.windspeed,
+    windspeedDiv,
+    unitObject[`${toggleStatus}Wind`],
+  );
 
   weatherContainer.appendChild(tempConditionsDiv);
   weatherContainer.appendChild(feelsLikeDiv);
