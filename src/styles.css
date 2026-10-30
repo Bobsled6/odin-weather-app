@@ -63,24 +63,30 @@ body {
 }
 
 #unitToggleLabel {
-    background: #ccc;
-    width: 60px;
-    height: 30px;
-    border-radius: 30px;
+    background: black;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 122px;
     cursor: pointer;
     position: relative;
+    display: flex;
+    align-items: center;
+    font-size: .6rem;
+    justify-content: space-around;    
+    color: white;
+
 }
 
 #unitToggleLabel::before {
     content: "";
     position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 26px;
-    height: 26px;
+    left: 0;
+    width: 2.5rem;
+    height: 2rem;
     background: white;
-    border-radius: 50%;
+    border-radius: 122px;
     transition: 0.3s;
+    border: 1px solid white;
 }
 
 #unitToggleCheckbox {
@@ -88,11 +94,11 @@ body {
 }
 
 #unitToggleCheckbox:checked + #unitToggleLabel {
-    background: blue;
+    background: black;
 }
 
 #unitToggleCheckbox:checked + #unitToggleLabel::before {
-    left: 32px;
+    left: 2.5rem;
 }
 
 
