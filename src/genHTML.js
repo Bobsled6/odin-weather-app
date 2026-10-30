@@ -1,6 +1,7 @@
 const weatherContainer = document.getElementById("weatherContainer");
 import { weatherObject } from "./weatherObject.js";
 import locationForm from "./locationForm.js";
+import { unitObject } from "./unitObject.js";
 
 
 function genHeader(location) {
@@ -19,6 +20,9 @@ function genConditions() {
   const humidityDiv = document.createElement("div");
   const precipChanceDiv = document.createElement("div");
   const windspeedDiv = document.createElement("div");
+  const toggle = document.getElementById("unitToggleCheckbox");
+
+  const toggleStatus = toggle.checked;
 
   conditionsDiv.id = "conditionsDiv";
   tempDiv.id = "tempDiv";
@@ -29,11 +33,12 @@ function genConditions() {
   windspeedDiv.id = "windspeedDiv";
 
   conditionsDiv.innerHTML = allWordsCap(weatherObject.conditions);
-  tempDiv.innerHTML = weatherObject.temp + "°F";
+  tempDiv.innerHTML = weatherObject.temp + unitObject[`${toggleStatus}Temp`];
   tempConditionsDiv.appendChild(tempDiv);
   tempConditionsDiv.appendChild(conditionsDiv);
 
-  weatherDiv("Feels Like", weatherObject.feelslike, feelsLikeDiv, "°F");
+  
+  weatherDiv("Feels Like", weatherObject.feelslike, feelsLikeDiv, unitObject[`${toggleStatus}Temp`] );
   weatherDiv("Humidity", weatherObject.humidity, humidityDiv, "%");
   weatherDiv(
     "Precipitation Chance",
@@ -41,7 +46,7 @@ function genConditions() {
     precipChanceDiv,
     "%"
   );
-  weatherDiv("Wind Speed", weatherObject.windspeed, windspeedDiv," mph");
+  weatherDiv("Wind Speed", weatherObject.windspeed, windspeedDiv,unitObject[`${toggleStatus}Wind`]);
 
   weatherContainer.appendChild(tempConditionsDiv);
   weatherContainer.appendChild(feelsLikeDiv);

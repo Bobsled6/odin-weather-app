@@ -1,5 +1,8 @@
 const unitObject =  {
-    units:"imperial",
+    falseTemp: "°C",
+    trueTemp: "°F",
+    falseWind: " kmh",
+    trueWind:" mph",
 };
 
 function unitToggle() {
@@ -18,6 +21,7 @@ metricDiv.id = "metricDiv";
 
 unitToggleCheckbox.setAttribute("type", "checkbox");
 unitToggleLabel.setAttribute("for", "unitToggleCheckbox");
+unitToggleCheckbox.setAttribute("role", "switch");
 
 imperialDiv.innerText = "Imperial";
 metricDiv.innerText = "Metric";
