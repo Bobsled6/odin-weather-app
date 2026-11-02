@@ -3,6 +3,9 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  background: #D7DADA;
+  background: radial-gradient(circle at center, #D7DADA 0%, #8FEBF0 100%);
 }
 #weatherContainer {
   height: 100%;
@@ -14,96 +17,87 @@ body {
 }
 
 #header {
-    align-self: center;
-    font-size: 5rem;
+  align-self: center;
+  font-size: 5rem;
 }
 
 #tempConditionsDiv {
-    display: flex;
-    flex-direction: column;
-    gap: .7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
 #tempDiv {
-    font-size: 3.5rem;
+  font-size: 3.5rem;
 }
 
 #conditionsDiv {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .parentDiv {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 #locationForm {
-    grid-area: 8 / 1 / 8 / 1;
-    padding-bottom: 6rem;
-    font-size: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-
+  grid-area: 8 / 1 / 8 / 1;
+  padding-bottom: 6rem;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 #locationInput {
-    width: 75%;
-    align-self: center;
+  width: 75%;
+  align-self: center;
 }
 
 #locationButton {
-    width: 25%;
-    align-self: center;
+  width: 25%;
+  align-self: center;
 }
 
 #unitToggleContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #unitToggleLabel {
-    background: black;
-    width: 5rem;
-    height: 2rem;
-    border-radius: 122px;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-size: .6rem;
-    justify-content: space-around;    
-    color: white;
-
+  background: black;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 122px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
+  justify-content: space-around;
+  color: white;
 }
 
 #unitToggleLabel::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 2.5rem;
-    height: 2rem;
-    background: white;
-    border-radius: 122px;
-    transition: 0.3s;
-    border: 1px solid white;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 2.5rem;
+  height: 2rem;
+  background: white;
+  border-radius: 122px;
+  transition: 0.3s;
+  border: 1px solid white;
 }
 
 #unitToggleCheckbox {
-    display: none;
+  display: none;
 }
 
 #unitToggleCheckbox:checked + #unitToggleLabel {
-    background: black;
+  background: black;
 }
 
 #unitToggleCheckbox:checked + #unitToggleLabel::before {
-    left: 2.5rem;
+  left: 2.5rem;
 }
-
-
-
-
-
-
-
