@@ -6,6 +6,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background: #D7DADA;
   background: radial-gradient(circle at center, #D7DADA 0%, #8FEBF0 100%);
+  color: #3d4449;
 }
 #weatherContainer {
   height: 100%;
@@ -46,16 +47,25 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  align-items: center;
+  width: 20%;
+  justify-self: center;
 }
 
 #locationInput {
   width: 75%;
   align-self: center;
+  border-radius: 12px;
+  text-indent: .5rem;
+  border: 1px solid #3d4449;
 }
 
 #locationButton {
   width: 25%;
   align-self: center;
+  color: #3d4449;
+  border-radius: 12px;
+  border: 1px solid #3d4449;;
 }
 
 #unitToggleContainer {
@@ -65,7 +75,7 @@ body {
 }
 
 #unitToggleLabel {
-  background: black;
+  background: white;
   width: 5rem;
   height: 2rem;
   border-radius: 122px;
@@ -74,8 +84,10 @@ body {
   display: flex;
   align-items: center;
   font-size: 0.6rem;
+  font-weight: bolder;
+  text-decoration: underline;
   justify-content: space-around;
-  color: white;
+  color: #3d4449;
 }
 
 #unitToggleLabel::before {
@@ -84,7 +96,7 @@ body {
   left: 0;
   width: 2.5rem;
   height: 2rem;
-  background: white;
+  background: rgb(78, 198, 202);
   border-radius: 122px;
   transition: 0.3s;
   border: 1px solid white;
@@ -95,7 +107,7 @@ body {
 }
 
 #unitToggleCheckbox:checked + #unitToggleLabel {
-  background: black;
+  background: white;
 }
 
 #unitToggleCheckbox:checked + #unitToggleLabel::before {

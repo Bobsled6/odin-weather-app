@@ -89,7 +89,6 @@ function allWordsCap(string) {
 
 export default function genHTML(location) {
   weatherContainer.innerHTML = "";
-  locationForm();
   genHeader(location);
   genConditions();
 }

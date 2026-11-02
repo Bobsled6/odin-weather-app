@@ -1,4 +1,4 @@
-const weatherContainer = document.getElementById("weatherContainer");
+const content = document.getElementById("content");
 import getWeatherData from "./getWeather.js";
 
 export default function locationForm() {
@@ -24,11 +24,12 @@ export default function locationForm() {
     event.preventDefault();
     let location = locationInput.value;
     getWeatherData(location);
+    locationInput.value = "";
   });
 
   locationForm.appendChild(locationLabel);
   locationForm.appendChild(locationInput);
   locationForm.appendChild(locationButton);
 
-  weatherContainer.appendChild(locationForm);
+  content.appendChild(locationForm);
 }
