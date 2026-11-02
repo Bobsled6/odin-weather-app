@@ -1,6 +1,5 @@
 const weatherContainer = document.getElementById("weatherContainer");
 import { weatherObject } from "./weatherObject.js";
-import locationForm from "./locationForm.js";
 import { unitObject } from "./unitObject.js";
 
 function genHeader(location) {

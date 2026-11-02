@@ -2,6 +2,7 @@ import processWeatherData from "./processWeatherData.js";
 import { weatherObject } from "./weatherObject.js";
 import genHTML from "./genHTML.js";
 import { unitObject } from "./unitObject.js";
+import loading from "./loading.js";
 
 export default async function getWeatherData(location) {
   fetch(
@@ -15,4 +16,7 @@ export default async function getWeatherData(location) {
       console.log(weatherObject);
     })
     .catch((error) => console.error(error));
+
+
+   loading();
 }
